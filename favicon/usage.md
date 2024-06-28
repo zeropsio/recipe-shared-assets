@@ -1,0 +1,1 @@
+Use Figma or another software to make changes to the SVG, and then use CloudConvert for the best possible conversion.
