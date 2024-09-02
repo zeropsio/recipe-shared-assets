@@ -1,4 +1,4 @@
-<svg width="40" height="40" fill="none"
+<svg width="38" height="38" fill="none"
     xmlns="http://www.w3.org/2000/svg">
-    <path d="M25 40h2.5L40 27.5 27.5 15H25v10H10V2.5H5V30h20v10Z" fill="#7CC6BB"/>
+    <path d="m20 38 17.5-12.5L20 13v10H9V.5H0V32h20v6Z" fill="#7CC6BB"/>
 </svg>
