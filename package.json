@@ -1,0 +1,17 @@
+{
+  "name": "recipe-shared-assets",
+  "version": "1.0.0",
+  "description": "The Recipe Shared Assets repository serves as a central hub for all shared resources and assets used in the Zerops recipes",
+  "main": "index.js",
+  "scripts": {
+    "svg": "node index.js"
+  },
+  "keywords": [
+    "recipe-shared-assets"
+  ],
+  "author": "zeropsio",
+  "license": "MIT",
+  "dependencies": {
+    "svgo": "^3.3.2"
+  }
+}
