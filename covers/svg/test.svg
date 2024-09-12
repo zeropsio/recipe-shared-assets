@@ -1,18 +1,1 @@
-<svg width="700" height="700" viewBox="0 0 700 700" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_342_319)">
-<rect width="700" height="700" fill="#EDEFF3"/>
-<g filter="url(#filter0_f_342_319)">
-<circle cx="768.327" cy="668.328" r="469.456" transform="rotate(4.03521 768.327 668.328)" fill="#97A4BD"/>
-</g>
-</g>
-<defs>
-<filter id="filter0_f_342_319" x="-401.148" y="-501.148" width="2338.95" height="2338.95" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="350" result="effect1_foregroundBlur_342_319"/>
-</filter>
-<clipPath id="clip0_342_319">
-<rect width="700" height="700" fill="white"/>
-</clipPath>
-</defs>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="700" fill="none"><g clip-path="url(#a)"><path fill="#EDEFF3" d="M0 0h700v700H0z"/><g filter="url(#b)"><circle cx="768.327" cy="668.328" r="469.456" fill="#97A4BD" transform="rotate(4.035 768.327 668.328)"/></g></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h700v700H0z"/></clipPath><filter id="b" width="2338.95" height="2338.95" x="-401.148" y="-501.148" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feGaussianBlur result="effect1_foregroundBlur_342_319" stdDeviation="350"/></filter></defs></svg>
