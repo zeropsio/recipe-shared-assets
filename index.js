@@ -3,25 +3,41 @@ const fs = require('fs').promises;
 const path = require('path');
 
 const svgDirPath = './covers/svg';
+const outputJsonPath = './optimized.json';
 
-console.time('Optimization Time');
+const startTime = Date.now();
 
 fs.readdir(svgDirPath)
     .then(files => {
         const svgFiles = files.filter(file => path.extname(file) === '.svg');
 
-        return Promise.all(svgFiles.map(async file => {
+        const processingPromises = svgFiles.map(file => {
             const svgFilePath = path.join(svgDirPath, file);
-            const svgData = await fs.readFile(svgFilePath, 'utf-8');
 
-            const result = optimize(svgData, { path: svgFilePath });
+            return fs.readFile(svgFilePath, 'utf-8')
+                .then(svgData => {
+                    const result = optimize(svgData, { path: svgFilePath });
+                    return fs.writeFile(svgFilePath, result.data)
+                        .then(() => {
+                            console.log(`Optimized: ${file}`);
+                        });
+                });
+        });
 
-            await fs.writeFile(svgFilePath, result.data);
-            console.log(`Optimized: ${file}`);
-        }));
+        return Promise.all(processingPromises);
     })
     .then(() => {
-        console.timeEnd('Optimization Time');
+        const endTime = Date.now();
+        const timeTaken = endTime - startTime;
+
+        const resultJson = {
+            timeTaken: `${timeTaken} ms`
+        };
+
+        return fs.writeFile(outputJsonPath, JSON.stringify(resultJson, null, 2))
+            .then(() => {
+                console.log(`Time taken: ${timeTaken} ms`);
+            });
     })
     .catch(err => {
         console.error('Error:', err);
