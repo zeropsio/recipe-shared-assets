@@ -10,7 +10,7 @@ on:
 jobs:
   optimize:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
@@ -31,7 +31,13 @@ jobs:
         git config --global user.name "zerops-gh"
         git config --global user.email "zerops.gh@gmail.com"
 
+    - name: Check for changes
+      id: git-status
+      run: |
+        git diff --exit-code || echo "Changes detected"
+      
     - name: Commit and push changes
+      if: steps.git-status.outputs.git-status == 'Changes detected'
       run: |
         git add .
         git commit -m "Optimize SVG files"
