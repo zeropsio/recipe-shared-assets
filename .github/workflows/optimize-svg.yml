@@ -26,8 +26,15 @@ jobs:
     - name: Run SVG optimization script
       run: node index.js
 
-    - name: Upload optimized SVGs
-      uses: actions/upload-artifact@v3
-      with:
-        name: optimized-svgs
-        path: ./covers/svg
+    - name: Configure Git
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "actions@github.com"
+
+    - name: Commit and push changes
+      run: |
+        git add .
+        git commit -m "Optimize SVG files"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
